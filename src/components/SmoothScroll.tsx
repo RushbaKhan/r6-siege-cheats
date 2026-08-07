@@ -1,51 +1,35 @@
 import { useEffect } from 'react';
+import Lenis from 'lenis';
+import { setLenis } from '../lib/lenis';
 
 export function SmoothScroll() {
   useEffect(() => {
-    let cancelled = false;
-    let cleanup: (() => void) | undefined;
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t: number) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+      smoothWheel: true,
+      syncTouch: true,
+      syncTouchLerp: 0.08,
+      touchMultiplier: 1.15,
+      wheelMultiplier: 1,
+      lerp: 0.1,
+    });
 
-    const start = () => {
-      if (cancelled) return;
+    setLenis(lenis);
+    document.documentElement.classList.add('lenis', 'lenis-smooth');
 
-      void import('lenis').then(({ default: Lenis }) => {
-        if (cancelled) return;
-
-        const lenis = new Lenis({
-          duration: 1.4,
-          easing: (t: number) => Math.min(1, 1.001 - 2 ** (-10 * t)),
-          smoothWheel: true,
-          touchMultiplier: 1.2,
-        });
-
-        let frame = 0;
-        const raf = (time: number) => {
-          lenis.raf(time);
-          frame = requestAnimationFrame(raf);
-        };
-        frame = requestAnimationFrame(raf);
-
-        cleanup = () => {
-          cancelAnimationFrame(frame);
-          lenis.destroy();
-        };
-      });
+    let frame = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frame = requestAnimationFrame(raf);
     };
+    frame = requestAnimationFrame(raf);
 
-    if ('requestIdleCallback' in window) {
-      const idleId = window.requestIdleCallback(start, { timeout: 2000 });
-      return () => {
-        cancelled = true;
-        window.cancelIdleCallback(idleId);
-        cleanup?.();
-      };
-    }
-
-    const timeoutId = window.setTimeout(start, 1200);
     return () => {
-      cancelled = true;
-      window.clearTimeout(timeoutId);
-      cleanup?.();
+      cancelAnimationFrame(frame);
+      document.documentElement.classList.remove('lenis', 'lenis-smooth');
+      setLenis(null);
+      lenis.destroy();
     };
   }, []);
 

@@ -1,4 +1,5 @@
 import { HeroSection } from '../components/HeroSection';
+import { Testimonials } from '../components/Testimonials';
 import { LazySection, lazySection } from '../components/DeferredSection';
 
 const SafetySection = lazySection(() => import('../components/SafetySection'), 'SafetySection');
@@ -21,6 +22,7 @@ export function HomePage() {
       <LazySection component={Integrations} fallbackMinHeight="320px" />
       <LazySection component={SupportBanner} fallbackMinHeight="180px" />
       <LazySection component={PricingFaqSection} fallbackMinHeight="420px" />
+      <Testimonials />
       <LazySection component={BlogPreview} fallbackMinHeight="360px" />
       <LazySection component={SeoContentSection} fallbackMinHeight="320px" />
       <LazySection component={DiscordSupport} fallbackMinHeight="240px" />
