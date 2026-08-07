@@ -11,6 +11,7 @@ const arrayMatch = src.match(/export const BLOG_POSTS: BlogPost\[\] = (\[[\s\S]*
 if (!arrayMatch) throw new Error('Could not parse BLOG_POSTS');
 
 const body = arrayMatch[1]
+  .replace(/\bBLOG_SCREENSHOTS\[(\d+)\]/g, (_, index) => `'\/screenshots\/blog\/blog-${String(Number(index) + 1).padStart(2, '0')}.webp'`)
   .replace(/\bR6_SCREENSHOTS\[(\d+)\]/g, (_, index) => `'\/screenshots\/r6-${Number(index) + 1}.webp'`)
   .replace(/\bbody:\s*`[\s\S]*?`,/g, '');
 

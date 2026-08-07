@@ -1,4 +1,4 @@
-import { R6_SCREENSHOTS } from './site';
+import { BLOG_SCREENSHOTS } from './site';
 import type { BlogPost } from './blog-types';
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -8,7 +8,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Guide',
     date: 'August 1, 2026',
     readTime: '12 min read',
-    image: R6_SCREENSHOTS[0],
+    image: BLOG_SCREENSHOTS[0],
     excerpt:
       'A full breakdown of Rainbow Six Siege cheat features — operator ESP, gadget ESP, aimbot with recoil control, no recoil, penetration indicator, stream-proof mode, and CLOUD-DMA on AWS for ranked bomb rounds.',
     body: `
@@ -85,7 +85,7 @@ None of this replaces teamwork. Siege remains a game of comms, utility chains, a
     category: 'ESP',
     date: 'July 28, 2026',
     readTime: '11 min read',
-    image: R6_SCREENSHOTS[1],
+    image: BLOG_SCREENSHOTS[1],
     excerpt:
       'How R6 ESP works in practice — operator tracking for attackers and defenders, gadget ESP for cameras and traps, drone visibility, and defuser/objective markers during ranked bomb rounds on Ubisoft\'s BattlEye-protected client.',
     body: `
@@ -182,7 +182,7 @@ If you are new to Rainbow Six Siege Cheats, start on the homepage feature overvi
     category: 'Aimbot',
     date: 'July 24, 2026',
     readTime: '11 min read',
-    image: R6_SCREENSHOTS[2],
+    image: BLOG_SCREENSHOTS[2],
     excerpt:
       'Configure Rainbow Six Siege aimbot with recoil control, standalone no recoil for all weapons, automatic headshot targeting, penetration-aware fights, and conservative ranked settings under BattlEye on Ubisoft\'s PC client.',
     body: `
@@ -307,7 +307,7 @@ Siege rewards players who combine information, utility usage, and controlled gun
     category: 'ESP',
     date: 'July 20, 2026',
     readTime: '12 min read',
-    image: R6_SCREENSHOTS[3],
+    image: BLOG_SCREENSHOTS[3],
     excerpt:
       'Technical and practical guide to Rainbow Six Siege wallhack and ESP — how operator, gadget, and objective overlays read game memory, render through walls, interact with BattlEye on Ubisoft\'s PC client, and pair with aimbot and stream-proof mode.',
     body: `
@@ -426,7 +426,7 @@ None of this replaces Ubisoft's intended skill expression — map knowledge, uti
     category: 'Aimbot',
     date: 'August 3, 2026',
     readTime: '13 min read',
-    image: R6_SCREENSHOTS[4],
+    image: BLOG_SCREENSHOTS[4],
     excerpt:
       'Complete guide to standalone no recoil in Rainbow Six Siege — weapon tuning for SMGs, rifles, DMRs and LMGs, pairing with R6 ESP and aimbot, ranked-safe settings under BattlEye, and how no recoil differs from integrated recoil control on Ubisoft\'s PC client.',
     body: `
@@ -553,7 +553,7 @@ Move to ranked only after replays look believable. Scale up slightly if you are 
     category: 'ESP',
     date: 'August 5, 2026',
     readTime: '14 min read',
-    image: R6_SCREENSHOTS[0],
+    image: BLOG_SCREENSHOTS[5],
     excerpt:
       'Deep dive into gadget ESP for Rainbow Six Siege — defender cameras, attacker drones, Kapkan traps, Frost mats, Claymores, Gu mines, and objective utility overlays for ranked bomb rounds under BattlEye on Ubisoft\'s PC client.',
     body: `
@@ -694,7 +694,7 @@ Gadget ESP is the utility layer that separates Rainbow Six Siege Cheats from gen
     category: 'ESP',
     date: 'August 7, 2026',
     readTime: '13 min read',
-    image: R6_SCREENSHOTS[1],
+    image: BLOG_SCREENSHOTS[1],
     excerpt:
       'Ranked bomb guide to R6 operator ESP — tracking attackers and defenders through walls, rank display, distance filters, attack and defense phase tactics, pairing with gadget ESP and aimbot under BattlEye on Ubisoft\'s PC client.',
     body: `
@@ -843,7 +843,7 @@ Operator ESP is the ranked bomb foundation for Rainbow Six Siege Cheats users wh
     category: 'Guide',
     date: 'August 9, 2026',
     readTime: '12 min read',
-    image: R6_SCREENSHOTS[2],
+    image: BLOG_SCREENSHOTS[2],
     excerpt:
       'How stream-proof mode works in Rainbow Six Siege cheats — hiding ESP and overlay elements from OBS, Discord, and capture software while playing ranked under BattlEye on Ubisoft\'s PC client, plus limitations and best practices.',
     body: `
@@ -980,7 +980,7 @@ Stream-proof mode is essential hygiene for players who run overlays and share ga
     category: 'Guide',
     date: 'August 11, 2026',
     readTime: '14 min read',
-    image: R6_SCREENSHOTS[3],
+    image: BLOG_SCREENSHOTS[3],
     excerpt:
       'Guide to CLOUD-DMA and AWS remote execution for Rainbow Six Siege cheats — how cloud DMA differs from local external ESP and aimbot, setup overview, latency tradeoffs, BattlEye considerations on Ubisoft\'s PC client, and when to choose cloud vs local.',
     body: `
@@ -1135,7 +1135,7 @@ CLOUD-DMA on AWS is the isolation tier for serious Rainbow Six Siege Cheats user
     category: 'Guide',
     date: 'August 13, 2026',
     readTime: '15 min read',
-    image: R6_SCREENSHOTS[4],
+    image: BLOG_SCREENSHOTS[4],
     excerpt:
       'Recommended Rainbow Six Siege cheat settings for ranked bomb 2026 — operator ESP, gadget ESP, aimbot, no recoil, penetration indicator, stream-proof, and CLOUD-DMA configs for attackers and defenders under BattlEye on Ubisoft\'s PC client.',
     body: `
