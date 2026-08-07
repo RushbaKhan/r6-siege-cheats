@@ -42,8 +42,8 @@ export function Footer() {
               <span style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 900,
-                fontSize: '1.15rem',
-                letterSpacing: '0.06em',
+                fontSize: '1.25rem',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#ffffff',
               }}>

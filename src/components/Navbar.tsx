@@ -147,8 +147,8 @@ export function Navbar() {
             <span style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 900,
-              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
-              letterSpacing: '0.04em',
+              fontSize: '1.1rem',
+              letterSpacing: '0.06em',
               textTransform: 'uppercase',
               color: '#ffffff',
               whiteSpace: 'nowrap',

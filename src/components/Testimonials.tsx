@@ -134,7 +134,7 @@ function ReviewsIntro() {
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"
-          style={{ padding: '14px 28px', fontSize: '0.875rem', width: '100%', maxWidth: 320, justifyContent: 'center' }}
+          style={{ padding: '14px 28px', fontSize: '0.875rem', width: '100%', maxWidth: 320 }}
         >
           Start with R6 Siege Cheats
         </a>

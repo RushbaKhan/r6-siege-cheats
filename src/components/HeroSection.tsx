@@ -102,9 +102,9 @@ export function HeroSection() {
 
         <h1 style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(2rem, 6vw, 4.5rem)',
+          fontSize: 'clamp(2.4rem, 7vw, 5.5rem)',
           fontWeight: 900,
-          lineHeight: 1.05,
+          lineHeight: 1.02,
           letterSpacing: '-0.02em',
           marginBottom: 'clamp(16px, 2.5vw, 24px)',
           maxWidth: '900px',
@@ -114,7 +114,10 @@ export function HeroSection() {
           </span>
           <span style={{
             display: 'block',
-            marginTop: 'clamp(6px, 1vw, 10px)',
+            marginTop: 'clamp(8px, 1.5vw, 14px)',
+            fontSize: 'clamp(1.35rem, 3.2vw, 2.25rem)',
+            fontWeight: 800,
+            letterSpacing: '0.04em',
             color: '#ffffff',
           }}>
             ESP, Aimbot &amp; Wallhack
