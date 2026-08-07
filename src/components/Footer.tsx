@@ -42,20 +42,12 @@ export function Footer() {
               <span style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 900,
-                fontSize: '1.25rem',
-                letterSpacing: '0.1em',
+                fontSize: '1.15rem',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
+                color: '#ffffff',
               }}>
-                <span style={{
-                  background: 'linear-gradient(135deg, #c084fc 0%, #a855f7 60%, #7c3aed 100%)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>R6</span>
-                <span style={{ color: '#ffffff' }}>Cheats</span>
+                R6 Siege Cheats
               </span>
             </div>
             <p style={{

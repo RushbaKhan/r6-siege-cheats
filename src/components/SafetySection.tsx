@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { VideoEmbed } from './VideoEmbed';
-import { VIDEO_DEMO, VIDEO_HERO } from '../seo/site';
+import { VIDEO_DEMO, VIDEO_PRIMARY } from '../seo/site';
 
 export function SafetySection() {
   return (
@@ -81,8 +81,8 @@ export function SafetySection() {
               position: 'relative',
             }}>
               <VideoEmbed
-                src={VIDEO_HERO}
-                ariaLabel="Rainbow Six Siege cheat demonstration with operator ESP and aimbot"
+                src={VIDEO_PRIMARY}
+                ariaLabel="Rainbow Six Siege cheat product demonstration"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>

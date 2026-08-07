@@ -147,20 +147,13 @@ export function Navbar() {
             <span style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 900,
-              fontSize: '1.1rem',
-              letterSpacing: '0.06em',
+              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
+              letterSpacing: '0.04em',
               textTransform: 'uppercase',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
+              color: '#ffffff',
+              whiteSpace: 'nowrap',
             }}>
-              <span style={{
-                background: 'linear-gradient(135deg, #c084fc 0%, #a855f7 60%, #7c3aed 100%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>R6</span>
-              <span style={{ color: '#ffffff' }}>Cheats</span>
+              R6 Siege Cheats
             </span>
           </Link>
 

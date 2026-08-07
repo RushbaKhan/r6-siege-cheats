@@ -2,12 +2,20 @@ import { useState, useEffect } from 'react';
 import { R6_SCREENSHOTS } from '../seo/site';
 
 interface ScreenshotSliderProps {
+  images?: readonly string[];
   interval?: number;
   style?: React.CSSProperties;
   imgStyle?: React.CSSProperties;
+  altPrefix?: string;
 }
 
-export function ScreenshotSlider({ interval = 3500, style, imgStyle }: ScreenshotSliderProps) {
+export function ScreenshotSlider({
+  images = R6_SCREENSHOTS,
+  interval = 3500,
+  style,
+  imgStyle,
+  altPrefix = 'Rainbow Six Siege gameplay screenshot',
+}: ScreenshotSliderProps) {
   const [active, setActive] = useState(0);
   const [prev, setPrev] = useState<number | null>(null);
 
@@ -15,27 +23,19 @@ export function ScreenshotSlider({ interval = 3500, style, imgStyle }: Screensho
     const id = setInterval(() => {
       setActive(cur => {
         setPrev(cur);
-        return (cur + 1) % R6_SCREENSHOTS.length;
+        return (cur + 1) % images.length;
       });
     }, interval);
     return () => clearInterval(id);
-  }, [interval]);
-
-  const altTexts = [
-    'Rainbow Six Siege operator ESP through walls in ranked match',
-    'R6 Siege tactical gameplay with gadget ESP overlay',
-    'Rainbow Six Siege wallhack showing enemy operator positions',
-    'R6 Siege bomb site objective gameplay screenshot',
-    'Rainbow Six Siege attacker push with operator utility',
-  ];
+  }, [interval, images.length]);
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', ...style }}>
-      {R6_SCREENSHOTS.map((src, i) => (
+      {images.map((src, i) => (
         <img
           key={src}
           src={src}
-          alt={altTexts[i] ?? `Rainbow Six Siege gameplay screenshot ${i + 1}`}
+          alt={`${altPrefix} ${i + 1}`}
           loading={i === 0 ? 'eager' : 'lazy'}
           decoding="async"
           width={1920}
@@ -66,7 +66,7 @@ export function ScreenshotSlider({ interval = 3500, style, imgStyle }: Screensho
         gap: '6px',
         zIndex: 10,
       }}>
-        {R6_SCREENSHOTS.map((_, i) => (
+        {images.map((_, i) => (
           <button
             key={i}
             aria-label={`Show screenshot ${i + 1}`}

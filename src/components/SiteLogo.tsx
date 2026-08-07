@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { LOGO_URL, SITE_NAME } from '../seo/site';
+import { LOGO_PATH } from '../seo/site';
 
 type SiteLogoProps = {
   size?: number;
@@ -11,8 +11,8 @@ type SiteLogoProps = {
 export function SiteLogo({ size = 32, className, style, loading = 'lazy' }: SiteLogoProps) {
   return (
     <img
-      src={LOGO_URL}
-      alt={`${SITE_NAME} logo`}
+      src={LOGO_PATH}
+      alt="R6 Siege Cheats logo"
       width={size}
       height={size}
       loading={loading}

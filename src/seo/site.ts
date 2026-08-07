@@ -4,12 +4,27 @@ export const SITE_SHORT_NAME = 'R6 Siege Cheats';
 export const GAME_NAME = 'Rainbow Six Siege';
 export const DEVELOPER = 'Ubisoft';
 export const BUY_URL = 'https://zadeyo.com/go/RUSHBA?to=%2Fproducts%2Frainbow-six-siege';
-export const LOGO_URL = `${SITE_URL}/logo.webp`;
+export const LOGO_PATH = '/logo.webp';
+export const LOGO_URL = `${SITE_URL}${LOGO_PATH}`;
 export const FAVICON_URL = `${SITE_URL}/favicon.ico`;
 export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const INDEXNOW_KEY = '7f3c9a2e-1b4d-4e8f-9c6a-2d5e8f1a3b7c';
-export const VIDEO_HERO = '/hero-video.mp4';
+/** Original hero clip — used in lower homepage video section */
+export const VIDEO_SHOWCASE = '/hero-video.mp4';
+/** New product demo clip */
+export const VIDEO_PRIMARY = '/demo-video-2.mp4';
 export const VIDEO_DEMO = 'https://bryjchknhsrmjdunnfer.supabase.co/storage/v1/object/public/575/0510(3).mp4';
+/** @deprecated use VIDEO_SHOWCASE */
+export const VIDEO_HERO = VIDEO_SHOWCASE;
+
+export const HERO_SCREENSHOTS = [
+  '/screenshots/hero/hero-esp-1.png',
+  '/screenshots/hero/hero-esp-2.png',
+  '/screenshots/hero/hero-esp-3.png',
+  '/screenshots/hero/hero-esp-4.png',
+  '/screenshots/hero/hero-esp-5.png',
+  '/screenshots/hero/hero-esp-6.png',
+] as const;
 
 export const R6_SCREENSHOTS = [
   '/screenshots/r6-1.jpg',

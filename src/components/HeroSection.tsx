@@ -1,5 +1,5 @@
-import { VideoEmbed } from './VideoEmbed';
-import { BUY_URL, VIDEO_HERO } from '../seo/site';
+import { ScreenshotSlider } from './ScreenshotSlider';
+import { BUY_URL, HERO_SCREENSHOTS } from '../seo/site';
 
 export function HeroSection() {
   return (
@@ -21,18 +21,19 @@ export function HeroSection() {
         zIndex: 0,
         overflow: 'hidden',
       }}>
-        <VideoEmbed
-          src={VIDEO_HERO}
-          priority
-          ariaLabel="Rainbow Six Siege cheats gameplay demonstration"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        <ScreenshotSlider
+          images={HERO_SCREENSHOTS}
+          interval={4000}
+          style={{ width: '100%', height: '100%' }}
+          imgStyle={{ position: 'absolute', height: '100%' }}
+          altPrefix="Rainbow Six Siege ESP wallhack gameplay"
         />
       </div>
 
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'linear-gradient(105deg, rgba(6,4,9,0.95) 0%, rgba(6,4,9,0.82) 50%, rgba(6,4,9,0.65) 100%)',
+        background: 'linear-gradient(105deg, rgba(6,4,9,0.95) 0%, rgba(6,4,9,0.82) 50%, rgba(6,4,9,0.55) 100%)',
         zIndex: 3,
       }} />
 
@@ -104,7 +105,14 @@ export function HeroSection() {
           maxWidth: '900px',
         }}>
           <span className="gradient-text" style={{ display: 'block' }}>
-            Rainbow Six Siege Cheats – ESP, Aimbot &amp; Wallhack
+            Rainbow Six Siege Cheats –
+          </span>
+          <span style={{
+            display: 'block',
+            marginTop: 'clamp(6px, 1vw, 10px)',
+            color: '#ffffff',
+          }}>
+            ESP, Aimbot &amp; Wallhack
           </span>
         </h1>
 
