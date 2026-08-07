@@ -1,10 +1,10 @@
 import { HeroSection } from '../components/HeroSection';
 import { HomeSeoIntro } from '../components/HomeSeoIntro';
+import { SafetySection } from '../components/SafetySection';
 import { Testimonials } from '../components/Testimonials';
 import { SeoContentSection } from '../components/SeoContentSection';
 import { LazySection, lazySection } from '../components/DeferredSection';
 
-const SafetySection = lazySection(() => import('../components/SafetySection'), 'SafetySection');
 const FeaturesGrid = lazySection(() => import('../components/FeaturesGrid'), 'FeaturesGrid');
 const HowItWorks = lazySection(() => import('../components/HowItWorks'), 'HowItWorks');
 const Integrations = lazySection(() => import('../components/Integrations'), 'Integrations');
@@ -17,7 +17,7 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
-      <LazySection component={SafetySection} fallbackMinHeight="520px" />
+      <SafetySection />
       <LazySection component={FeaturesGrid} fallbackMinHeight="480px" />
       <LazySection component={HowItWorks} fallbackMinHeight="420px" />
       <LazySection component={Integrations} fallbackMinHeight="320px" />
