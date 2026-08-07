@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { ScreenshotSlider } from './ScreenshotSlider';
 import { BUY_URL, HERO_SCREENSHOTS } from '../seo/site';
 
 export function HeroSection() {
+  useEffect(() => {
+    document.getElementById('critical-hero')?.remove();
+  }, []);
+
   return (
     <section style={{
       position: 'relative',

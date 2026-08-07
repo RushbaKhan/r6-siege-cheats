@@ -9,29 +9,28 @@ export const LOGO_URL = `${SITE_URL}${LOGO_PATH}`;
 export const FAVICON_URL = `${SITE_URL}/favicon.ico`;
 export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const INDEXNOW_KEY = '7f3c9a2e-1b4d-4e8f-9c6a-2d5e8f1a3b7c';
-/** Original hero clip — used in lower homepage video section */
-export const VIDEO_SHOWCASE = '/hero-video.mp4';
-/** New product demo clip */
-export const VIDEO_PRIMARY = '/demo-video-2.mp4';
+/** Hosted on CDN — avoids shipping multi‑MB video files with the site bundle */
 export const VIDEO_DEMO = 'https://bryjchknhsrmjdunnfer.supabase.co/storage/v1/object/public/575/0510(3).mp4';
+export const VIDEO_SHOWCASE = VIDEO_DEMO;
+export const VIDEO_PRIMARY = VIDEO_DEMO;
 /** @deprecated use VIDEO_SHOWCASE */
 export const VIDEO_HERO = VIDEO_SHOWCASE;
 
 export const HERO_SCREENSHOTS = [
-  '/screenshots/hero/hero-esp-1.png',
-  '/screenshots/hero/hero-esp-2.png',
-  '/screenshots/hero/hero-esp-3.png',
-  '/screenshots/hero/hero-esp-4.png',
-  '/screenshots/hero/hero-esp-5.png',
-  '/screenshots/hero/hero-esp-6.png',
+  '/screenshots/hero/hero-esp-1.webp',
+  '/screenshots/hero/hero-esp-2.webp',
+  '/screenshots/hero/hero-esp-3.webp',
+  '/screenshots/hero/hero-esp-4.webp',
+  '/screenshots/hero/hero-esp-5.webp',
+  '/screenshots/hero/hero-esp-6.webp',
 ] as const;
 
 export const R6_SCREENSHOTS = [
-  '/screenshots/r6-1.jpg',
-  '/screenshots/r6-2.jpg',
-  '/screenshots/r6-3.jpg',
-  '/screenshots/r6-4.jpg',
-  '/screenshots/r6-5.jpg',
+  '/screenshots/r6-1.webp',
+  '/screenshots/r6-2.webp',
+  '/screenshots/r6-3.webp',
+  '/screenshots/r6-4.webp',
+  '/screenshots/r6-5.webp',
 ] as const;
 
 /** @deprecated Use R6_SCREENSHOTS — kept for legacy imports during migration */

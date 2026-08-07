@@ -9,6 +9,10 @@ interface ScreenshotSliderProps {
   altPrefix?: string;
 }
 
+function slideIndex(index: number, length: number) {
+  return ((index % length) + length) % length;
+}
+
 export function ScreenshotSlider({
   images = R6_SCREENSHOTS,
   interval = 3500,
@@ -29,33 +33,45 @@ export function ScreenshotSlider({
     return () => clearInterval(id);
   }, [interval, images.length]);
 
+  const visible = new Set<number>([
+    active,
+    prev ?? active,
+    slideIndex(active + 1, images.length),
+    slideIndex(active - 1, images.length),
+  ]);
+
   return (
     <div style={{ position: 'relative', overflow: 'hidden', ...style }}>
-      {images.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt={`${altPrefix} ${i + 1}`}
-          loading={i === 0 ? 'eager' : 'lazy'}
-          decoding="async"
-          width={1920}
-          height={1080}
-          style={{
-            position: i === 0 ? 'relative' : 'absolute',
-            inset: 0,
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            transition: 'opacity 0.9s ease',
-            opacity: i === active ? 1 : 0,
-            zIndex: i === active ? 2 : i === prev ? 1 : 0,
-            display: 'block',
-            ...imgStyle,
-          }}
-        />
-      ))}
+      {images.map((src, i) => {
+        if (!visible.has(i)) return null;
+
+        return (
+          <img
+            key={src}
+            src={src}
+            alt={`${altPrefix} ${i + 1}`}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchPriority={i === 0 ? 'high' : 'auto'}
+            decoding="async"
+            width={1920}
+            height={1080}
+            style={{
+              position: i === 0 ? 'relative' : 'absolute',
+              inset: 0,
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'opacity 0.9s ease',
+              opacity: i === active ? 1 : 0,
+              zIndex: i === active ? 2 : i === prev ? 1 : 0,
+              display: 'block',
+              ...imgStyle,
+            }}
+          />
+        );
+      })}
 
       <div style={{
         position: 'absolute',

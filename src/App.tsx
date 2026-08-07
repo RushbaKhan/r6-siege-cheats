@@ -1,22 +1,30 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/Home';
-import { StorePage } from './pages/Store';
-import { EspPage } from './pages/EspPage';
-import { AimbotPage } from './pages/AimbotPage';
-import { WallhackPage } from './pages/WallhackPage';
-import { FeaturesPage } from './pages/FeaturesPage';
-import { FaqPage } from './pages/FaqPage';
-import { PrivacyPage } from './pages/PrivacyPage';
-import { BLOG_POSTS, BlogListPage, BlogPostPage } from './pages/Blog';
 import { I18nProvider } from './i18n';
 import { Seo } from './components/Seo';
 import { SmoothScroll } from './components/SmoothScroll';
 import { HOME_TITLE, HOME_DESCRIPTION, PAGE_TITLES, PAGE_DESCRIPTIONS } from './seo/constants';
 import { HOME_FAQ, LOGO_URL, OG_IMAGE, SITE_NAME, SITE_URL } from './seo/site';
+import { BLOG_POST_INDEX } from './seo/blog-index';
 import { buildProductSchema, PRODUCT_OFFER } from './seo/product-schema';
 import './globals.css';
+
+const StorePage = lazy(() => import('./pages/Store').then(m => ({ default: m.StorePage })));
+const EspPage = lazy(() => import('./pages/EspPage').then(m => ({ default: m.EspPage })));
+const AimbotPage = lazy(() => import('./pages/AimbotPage').then(m => ({ default: m.AimbotPage })));
+const WallhackPage = lazy(() => import('./pages/WallhackPage').then(m => ({ default: m.WallhackPage })));
+const FeaturesPage = lazy(() => import('./pages/FeaturesPage').then(m => ({ default: m.FeaturesPage })));
+const FaqPage = lazy(() => import('./pages/FaqPage').then(m => ({ default: m.FaqPage })));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
+const BlogListPage = lazy(() => import('./pages/Blog').then(m => ({ default: m.BlogListPage })));
+const BlogPostPage = lazy(() => import('./pages/Blog').then(m => ({ default: m.BlogPostPage })));
+
+function PageFallback() {
+  return <div style={{ minHeight: '40vh' }} aria-hidden />;
+}
 
 function toIsoDate(date: string) {
   const parsed = new Date(date);
@@ -89,7 +97,7 @@ function RouteSeo() {
 
   if (currentPath.startsWith('/blog/')) {
     const slug = currentPath.replace('/blog/', '');
-    const post = BLOG_POSTS.find(entry => entry.slug === slug);
+    const post = BLOG_POST_INDEX.find(entry => entry.slug === slug);
     if (post) {
       const canonicalPath = `/blog/${post.slug}`;
       const canonicalUrl = `${SITE_URL}${canonicalPath}`;
@@ -182,7 +190,7 @@ function RouteSeo() {
               { '@type': 'ListItem', position: 5, name: 'Cheat Features', url: `${SITE_URL}/features` },
               { '@type': 'ListItem', position: 6, name: 'FAQ', url: `${SITE_URL}/faq` },
               { '@type': 'ListItem', position: 7, name: 'Blog', url: `${SITE_URL}/blog` },
-              ...BLOG_POSTS.map((post, index) => ({
+              ...BLOG_POST_INDEX.map((post, index) => ({
                 '@type': 'ListItem',
                 position: index + 8,
                 name: post.title,
@@ -204,18 +212,20 @@ export default function App() {
         <SmoothScroll />
         <RouteSeo />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/buy" element={<StorePage />} />
-          <Route path="/esp" element={<EspPage />} />
-          <Route path="/aimbot" element={<AimbotPage />} />
-          <Route path="/wallhack" element={<WallhackPage />} />
-          <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/faq" element={<FaqPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-        </Routes>
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/buy" element={<StorePage />} />
+            <Route path="/esp" element={<EspPage />} />
+            <Route path="/aimbot" element={<AimbotPage />} />
+            <Route path="/wallhack" element={<WallhackPage />} />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/blog" element={<BlogListPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </I18nProvider>
     </BrowserRouter>

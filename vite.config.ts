@@ -8,9 +8,12 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          scroll: ['lenis'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('lenis')) return 'scroll';
+            if (id.includes('react-router') || id.includes('react-dom') || id.includes('/react/')) return 'vendor';
+          }
+          if (id.includes('/src/seo/blog-posts')) return 'blog';
         },
       },
     },

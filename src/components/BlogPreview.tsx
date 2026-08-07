@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AnimatedSection } from './AnimatedSection';
-import { BLOG_POSTS } from '../seo/blog-posts';
+import { BLOG_POST_INDEX } from '../seo/blog-index';
 
 function BlogPreviewCard({ slug, title, category, date, excerpt, image }: {
   slug: string;
@@ -101,7 +101,7 @@ function BlogPreviewCard({ slug, title, category, date, excerpt, image }: {
 }
 
 export function BlogPreview() {
-  const latestPosts = BLOG_POSTS.slice(0, 3);
+  const latestPosts = BLOG_POST_INDEX.slice(0, 3);
 
   return (
     <AnimatedSection>

@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AnimatedSection } from '../components/AnimatedSection';
-import { BLOG_POSTS, type BlogPost } from '../seo/blog-posts';
+import { BLOG_POST_INDEX } from '../seo/blog-index';
+import type { BlogPost, BlogPostMeta } from '../seo/blog-types';
 import { BUY_URL } from '../seo/site';
-
-export { BLOG_POSTS };
 
 const CATEGORIES = ['All', 'ESP', 'Aimbot', 'Guide', 'Safety'];
 
-function BlogCard({ post }: { post: BlogPost }) {
+function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
     <Link to={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
       <article className="glass-card feature-card" style={{
@@ -83,8 +82,8 @@ function BlogCard({ post }: { post: BlogPost }) {
 export function BlogListPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const filtered = activeCategory === 'All'
-    ? BLOG_POSTS
-    : BLOG_POSTS.filter(p => p.category === activeCategory);
+    ? BLOG_POST_INDEX
+    : BLOG_POST_INDEX.filter(p => p.category === activeCategory);
 
   return (
     <main>
@@ -188,7 +187,7 @@ export function BlogListPage() {
           <nav aria-label="Blog internal links" style={{ marginTop: '48px', padding: '24px', background: 'var(--bg-surface)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-ghost)' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '12px' }}>Popular R6 Guides</h2>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', gap: '8px 16px' }}>
-              {BLOG_POSTS.slice(0, 5).map(post => (
+              {BLOG_POST_INDEX.slice(0, 5).map(post => (
                 <li key={post.slug}>
                   <Link to={`/blog/${post.slug}`} style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--accent)', textDecoration: 'none' }}>
                     {post.title}
@@ -306,11 +305,35 @@ function renderBody(body: string) {
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-  const post = BLOG_POSTS.find(p => p.slug === slug);
+  const [post, setPost] = useState<BlogPost | null | undefined>(undefined);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setPost(undefined);
+
+    if (!slug) {
+      setPost(null);
+      return;
+    }
+
+    import('../seo/blog-posts').then(mod => {
+      if (!cancelled) {
+        setPost(mod.BLOG_POSTS.find(p => p.slug === slug) ?? null);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  if (post === undefined) {
+    return <div style={{ minHeight: '50vh' }} aria-hidden />;
+  }
 
   if (!post) {
     return (
@@ -321,9 +344,9 @@ export function BlogPostPage() {
     );
   }
 
-  const related = BLOG_POSTS.filter(p => p.slug !== slug && p.category === post.category).slice(0, 2);
+  const related = BLOG_POST_INDEX.filter(p => p.slug !== slug && p.category === post.category).slice(0, 2);
   if (related.length < 2) {
-    const extras = BLOG_POSTS.filter(p => p.slug !== slug && !related.includes(p)).slice(0, 2 - related.length);
+    const extras = BLOG_POST_INDEX.filter(p => p.slug !== slug && !related.includes(p)).slice(0, 2 - related.length);
     related.push(...extras);
   }
 

@@ -1,15 +1,5 @@
 import { R6_SCREENSHOTS } from './site';
-
-export type BlogPost = {
-  slug: string;
-  title: string;
-  category: string;
-  date: string;
-  readTime: string;
-  image: string;
-  excerpt: string;
-  body: string;
-};
+import type { BlogPost } from './blog-types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
