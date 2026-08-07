@@ -34,15 +34,8 @@ export const R6_SCREENSHOTS = [
   '/screenshots/r6-5.webp',
 ] as const;
 
-/** Blog card / article hero thumbnails — ESP gameplay frames from demo videos */
-export const BLOG_SCREENSHOTS = [
-  '/screenshots/blog/blog-01.webp',
-  '/screenshots/blog/blog-02.webp',
-  '/screenshots/blog/blog-03.webp',
-  '/screenshots/blog/blog-04.webp',
-  '/screenshots/blog/blog-05.webp',
-  '/screenshots/blog/blog-06.webp',
-] as const;
+/** Blog thumbnails — same images as the homepage In-Game slider */
+export const BLOG_SCREENSHOTS = R6_SCREENSHOTS;
 
 /** @deprecated Use R6_SCREENSHOTS — kept for legacy imports during migration */
 export const SAND_SCREENSHOTS = R6_SCREENSHOTS;

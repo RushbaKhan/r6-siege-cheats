@@ -8,7 +8,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Guide',
     date: 'August 1, 2026',
     readTime: '12 min read',
-    image: '/screenshots/blog/blog-01.webp',
+    image: '/screenshots/r6-1.webp',
     excerpt: 'A full breakdown of Rainbow Six Siege cheat features — operator ESP, gadget ESP, aimbot with recoil control, no recoil, penetration indicator, stream-proof mode, and CLOUD-DMA on AWS for ranked bomb rounds.',
   },
   {
@@ -17,7 +17,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'ESP',
     date: 'July 28, 2026',
     readTime: '11 min read',
-    image: '/screenshots/blog/blog-02.webp',
+    image: '/screenshots/r6-2.webp',
     excerpt: 'How R6 ESP works in practice — operator tracking for attackers and defenders, gadget ESP for cameras and traps, drone visibility, and defuser/objective markers during ranked bomb rounds on Ubisoft\'s BattlEye-protected client.',
   },
   {
@@ -26,7 +26,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Aimbot',
     date: 'July 24, 2026',
     readTime: '11 min read',
-    image: '/screenshots/blog/blog-03.webp',
+    image: '/screenshots/r6-3.webp',
     excerpt: 'Configure Rainbow Six Siege aimbot with recoil control, standalone no recoil for all weapons, automatic headshot targeting, penetration-aware fights, and conservative ranked settings under BattlEye on Ubisoft\'s PC client.',
   },
   {
@@ -35,7 +35,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'ESP',
     date: 'July 20, 2026',
     readTime: '12 min read',
-    image: '/screenshots/blog/blog-04.webp',
+    image: '/screenshots/r6-4.webp',
     excerpt: 'Technical and practical guide to Rainbow Six Siege wallhack and ESP — how operator, gadget, and objective overlays read game memory, render through walls, interact with BattlEye on Ubisoft\'s PC client, and pair with aimbot and stream-proof mode.',
   },
   {
@@ -44,7 +44,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Aimbot',
     date: 'August 3, 2026',
     readTime: '13 min read',
-    image: '/screenshots/blog/blog-05.webp',
+    image: '/screenshots/r6-5.webp',
     excerpt: 'Complete guide to standalone no recoil in Rainbow Six Siege — weapon tuning for SMGs, rifles, DMRs and LMGs, pairing with R6 ESP and aimbot, ranked-safe settings under BattlEye, and how no recoil differs from integrated recoil control on Ubisoft\'s PC client.',
   },
   {
@@ -53,7 +53,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'ESP',
     date: 'August 5, 2026',
     readTime: '14 min read',
-    image: '/screenshots/blog/blog-06.webp',
+    image: '/screenshots/r6-1.webp',
     excerpt: 'Deep dive into gadget ESP for Rainbow Six Siege — defender cameras, attacker drones, Kapkan traps, Frost mats, Claymores, Gu mines, and objective utility overlays for ranked bomb rounds under BattlEye on Ubisoft\'s PC client.',
   },
   {
@@ -62,7 +62,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'ESP',
     date: 'August 7, 2026',
     readTime: '13 min read',
-    image: '/screenshots/blog/blog-02.webp',
+    image: '/screenshots/r6-2.webp',
     excerpt: 'Ranked bomb guide to R6 operator ESP — tracking attackers and defenders through walls, rank display, distance filters, attack and defense phase tactics, pairing with gadget ESP and aimbot under BattlEye on Ubisoft\'s PC client.',
   },
   {
@@ -71,7 +71,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Guide',
     date: 'August 9, 2026',
     readTime: '12 min read',
-    image: '/screenshots/blog/blog-03.webp',
+    image: '/screenshots/r6-3.webp',
     excerpt: 'How stream-proof mode works in Rainbow Six Siege cheats — hiding ESP and overlay elements from OBS, Discord, and capture software while playing ranked under BattlEye on Ubisoft\'s PC client, plus limitations and best practices.',
   },
   {
@@ -80,7 +80,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Guide',
     date: 'August 11, 2026',
     readTime: '14 min read',
-    image: '/screenshots/blog/blog-04.webp',
+    image: '/screenshots/r6-4.webp',
     excerpt: 'Guide to CLOUD-DMA and AWS remote execution for Rainbow Six Siege cheats — how cloud DMA differs from local external ESP and aimbot, setup overview, latency tradeoffs, BattlEye considerations on Ubisoft\'s PC client, and when to choose cloud vs local.',
   },
   {
@@ -89,7 +89,7 @@ export const BLOG_POST_INDEX: BlogPostMeta[] = [
     category: 'Guide',
     date: 'August 13, 2026',
     readTime: '15 min read',
-    image: '/screenshots/blog/blog-05.webp',
+    image: '/screenshots/r6-5.webp',
     excerpt: 'Recommended Rainbow Six Siege cheat settings for ranked bomb 2026 — operator ESP, gadget ESP, aimbot, no recoil, penetration indicator, stream-proof, and CLOUD-DMA configs for attackers and defenders under BattlEye on Ubisoft\'s PC client.',
   },
 ];
