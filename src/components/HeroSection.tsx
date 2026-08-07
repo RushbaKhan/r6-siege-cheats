@@ -130,10 +130,39 @@ export function HeroSection() {
           color: 'var(--text-secondary)',
           lineHeight: 1.65,
           maxWidth: '560px',
-          marginBottom: 'clamp(28px, 4vw, 40px)',
+          marginBottom: 'clamp(20px, 3vw, 28px)',
         }}>
           Premium Rainbow Six Siege cheat software with operator ESP through walls, advanced aimbot with recoil control, gadget ESP for cameras and drones, defuser ESP, no recoil, and stream-proof mode for ranked and casual play on PC.
         </p>
+
+        <nav
+          aria-label="Feature pages"
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px 16px',
+            marginBottom: 'clamp(28px, 4vw, 40px)',
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.8125rem',
+          }}
+        >
+          {[
+            { label: 'R6 ESP', href: '/esp' },
+            { label: 'R6 Aimbot', href: '/aimbot' },
+            { label: 'R6 Wallhack', href: '/wallhack' },
+            { label: 'All Features', href: '/features' },
+            { label: 'Blog', href: '/blog' },
+            { label: 'FAQ', href: '/faq' },
+          ].map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              style={{ color: 'var(--accent-bright)', textDecoration: 'none', fontWeight: 600 }}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: 'clamp(24px, 3vw, 32px)' }}>
           <a href={BUY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">

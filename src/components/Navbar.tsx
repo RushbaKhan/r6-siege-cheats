@@ -8,7 +8,12 @@ const MOBILE_MQ = '(max-width: 920px)';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
+  { label: 'R6 ESP', to: '/esp' },
+  { label: 'Aimbot', to: '/aimbot' },
+  { label: 'Wallhack', to: '/wallhack' },
+  { label: 'Features', to: '/features' },
   { label: 'Blog', to: '/blog' },
+  { label: 'FAQ', to: '/faq' },
 ];
 
 export function Navbar() {

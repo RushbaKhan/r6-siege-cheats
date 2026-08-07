@@ -9,6 +9,7 @@ const NAV = [
   { label: 'R6 Aimbot', to: '/aimbot' as const },
   { label: 'R6 Wallhack', to: '/wallhack' as const },
   { label: 'Features', to: '/features' as const },
+  { label: 'Buy', to: '/buy' as const },
   { label: 'FAQ', to: '/faq' as const },
   { label: 'Privacy', to: '/privacy' as const },
 ];

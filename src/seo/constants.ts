@@ -1,4 +1,4 @@
-export const HOME_TITLE = 'Rainbow Six Siege Cheats – ESP, Aimbot & Wallhack | R6SiegeCheats.com';
+export const HOME_TITLE = 'R6 Siege Cheats – ESP, Aimbot & Wallhack';
 export const HOME_DESCRIPTION =
   'Rainbow Six Siege cheats with operator ESP, aimbot, wallhack, gadget ESP, no recoil and objective features. Explore R6 cheat features and guides.';
 

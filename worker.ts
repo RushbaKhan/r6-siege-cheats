@@ -4,13 +4,16 @@ interface Env {
 
 function canonicalRedirect(request: Request): Response | null {
   const url = new URL(request.url);
+  const forwardedProto = request.headers.get('X-Forwarded-Proto');
+  const isHttp = url.protocol === 'http:' || forwardedProto === 'http';
 
   if (url.hostname.startsWith('www.')) {
     url.hostname = url.hostname.slice(4);
+    url.protocol = 'https:';
     return Response.redirect(url.toString(), 301);
   }
 
-  if (url.protocol === 'http:') {
+  if (isHttp) {
     url.protocol = 'https:';
     return Response.redirect(url.toString(), 301);
   }
@@ -56,6 +59,13 @@ export default {
     }
 
     const response = await env.ASSETS.fetch(request);
-    return withHtmlCharset(response);
+    const htmlResponse = withHtmlCharset(response);
+    const headers = new Headers(htmlResponse.headers);
+    headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+    return new Response(htmlResponse.body, {
+      status: htmlResponse.status,
+      statusText: htmlResponse.statusText,
+      headers,
+    });
   },
 };

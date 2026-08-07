@@ -3,6 +3,10 @@
   "name": "r6-siege-cheats",
   "main": "./worker.ts",
   "compatibility_date": "2026-01-01",
+  "routes": [
+    { "pattern": "r6siegecheats.com/*", "zone_name": "r6siegecheats.com" },
+    { "pattern": "www.r6siegecheats.com/*", "zone_name": "r6siegecheats.com" }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
