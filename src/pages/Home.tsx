@@ -1,4 +1,5 @@
 import { HeroSection } from '../components/HeroSection';
+import { HomeSeoIntro } from '../components/HomeSeoIntro';
 import { Testimonials } from '../components/Testimonials';
 import { SeoContentSection } from '../components/SeoContentSection';
 import { LazySection, lazySection } from '../components/DeferredSection';
@@ -16,6 +17,7 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
+      <HomeSeoIntro />
       <LazySection component={SafetySection} fallbackMinHeight="520px" />
       <LazySection component={FeaturesGrid} fallbackMinHeight="480px" />
       <LazySection component={HowItWorks} fallbackMinHeight="420px" />

@@ -109,19 +109,7 @@ export function HeroSection() {
           marginBottom: 'clamp(16px, 2.5vw, 24px)',
           maxWidth: '900px',
         }}>
-          <span className="gradient-text" style={{ display: 'block' }}>
-            Rainbow Six Siege Cheats –
-          </span>
-          <span style={{
-            display: 'block',
-            marginTop: 'clamp(8px, 1.5vw, 14px)',
-            fontSize: 'clamp(1.35rem, 3.2vw, 2.25rem)',
-            fontWeight: 800,
-            letterSpacing: '0.04em',
-            color: '#ffffff',
-          }}>
-            ESP, Aimbot &amp; Wallhack
-          </span>
+          R6 Siege Cheats – ESP, Aimbot &amp; Wallhack
         </h1>
 
         <p style={{
