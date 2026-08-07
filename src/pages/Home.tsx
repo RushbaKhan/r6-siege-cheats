@@ -17,7 +17,6 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
-      <HomeSeoIntro />
       <LazySection component={SafetySection} fallbackMinHeight="520px" />
       <LazySection component={FeaturesGrid} fallbackMinHeight="480px" />
       <LazySection component={HowItWorks} fallbackMinHeight="420px" />
@@ -26,6 +25,7 @@ export function HomePage() {
       <LazySection component={PricingFaqSection} fallbackMinHeight="420px" />
       <Testimonials />
       <LazySection component={BlogPreview} fallbackMinHeight="360px" />
+      <HomeSeoIntro />
       <SeoContentSection />
       <LazySection component={DiscordSupport} fallbackMinHeight="240px" />
     </>
