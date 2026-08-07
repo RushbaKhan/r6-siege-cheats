@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { VideoEmbed } from './VideoEmbed';
-import { VIDEO_DEMO, VIDEO_PRIMARY } from '../seo/site';
+import { HERO_SCREENSHOTS, VIDEO_DEMO, VIDEO_PRIMARY } from '../seo/site';
 
 export function SafetySection() {
   return (
@@ -82,6 +82,7 @@ export function SafetySection() {
             }}>
               <VideoEmbed
                 src={VIDEO_PRIMARY}
+                poster={HERO_SCREENSHOTS[0]}
                 ariaLabel="Rainbow Six Siege cheat product demonstration"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -95,6 +96,7 @@ export function SafetySection() {
             }}>
               <VideoEmbed
                 src={VIDEO_DEMO}
+                poster={HERO_SCREENSHOTS[1]}
                 ariaLabel="Rainbow Six Siege ESP and wallhack gameplay demonstration"
               />
             </div>

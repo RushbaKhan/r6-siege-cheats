@@ -9,10 +9,11 @@ export const LOGO_URL = `${SITE_URL}${LOGO_PATH}`;
 export const FAVICON_URL = `${SITE_URL}/favicon.ico`;
 export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const INDEXNOW_KEY = '7f3c9a2e-1b4d-4e8f-9c6a-2d5e8f1a3b7c';
-/** Hosted on CDN — avoids shipping multi‑MB video files with the site bundle */
-export const VIDEO_DEMO = 'https://bryjchknhsrmjdunnfer.supabase.co/storage/v1/object/public/575/0510(3).mp4';
-export const VIDEO_SHOWCASE = VIDEO_DEMO;
-export const VIDEO_PRIMARY = VIDEO_DEMO;
+/** Product demo clip (Google Drive video 1 — web-optimized, lazy-loaded) */
+export const VIDEO_PRIMARY = '/videos/r6-demo.mp4';
+/** Gameplay / hero showcase clip (Google Drive video 2 — web-optimized, lazy-loaded) */
+export const VIDEO_SHOWCASE = '/videos/r6-gameplay.mp4';
+export const VIDEO_DEMO = VIDEO_SHOWCASE;
 /** @deprecated use VIDEO_SHOWCASE */
 export const VIDEO_HERO = VIDEO_SHOWCASE;
 

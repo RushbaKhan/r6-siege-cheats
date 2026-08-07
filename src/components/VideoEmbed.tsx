@@ -2,13 +2,14 @@ import { useRef, useEffect, useState } from 'react';
 
 type VideoEmbedProps = {
   src: string;
+  poster?: string;
   className?: string;
   style?: React.CSSProperties;
   priority?: boolean;
   ariaLabel?: string;
 };
 
-export function VideoEmbed({ src, className, style, priority = false, ariaLabel }: VideoEmbedProps) {
+export function VideoEmbed({ src, poster, className, style, priority = false, ariaLabel }: VideoEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [activeSrc, setActiveSrc] = useState<string | null>(priority ? src : null);
@@ -61,6 +62,7 @@ export function VideoEmbed({ src, className, style, priority = false, ariaLabel 
           muted
           playsInline
           preload="none"
+          poster={poster}
           aria-label={ariaLabel}
           style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
         >
@@ -73,7 +75,9 @@ export function VideoEmbed({ src, className, style, priority = false, ariaLabel 
             width: '100%',
             height: '100%',
             minHeight: '180px',
-            background: 'linear-gradient(135deg, var(--bg-void) 0%, var(--bg-surface) 100%)',
+            background: poster
+              ? `center/cover no-repeat url(${poster})`
+              : 'linear-gradient(135deg, var(--bg-void) 0%, var(--bg-surface) 100%)',
           }}
         />
       )}

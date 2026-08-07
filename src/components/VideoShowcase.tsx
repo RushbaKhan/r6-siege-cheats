@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { VideoEmbed } from './VideoEmbed';
-import { VIDEO_SHOWCASE } from '../seo/site';
+import { HERO_SCREENSHOTS, VIDEO_SHOWCASE } from '../seo/site';
 
 export function VideoShowcase() {
   return (
@@ -43,6 +43,7 @@ export function VideoShowcase() {
           }}>
             <VideoEmbed
               src={VIDEO_SHOWCASE}
+              poster={HERO_SCREENSHOTS[2]}
               ariaLabel="Rainbow Six Siege cheat gameplay with operator ESP and aimbot"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
