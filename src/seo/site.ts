@@ -19,7 +19,6 @@ export const VIDEO_HERO = VIDEO_PRIMARY;
 
 export const HERO_SCREENSHOTS = [
   '/screenshots/hero/hero-esp-1.webp',
-  '/screenshots/hero/hero-esp-2.webp',
   '/screenshots/hero/hero-esp-3.webp',
   '/screenshots/hero/hero-esp-4.webp',
   '/screenshots/hero/hero-esp-5.webp',
