@@ -109,7 +109,7 @@ export function HeroSection() {
           marginBottom: 'clamp(16px, 2.5vw, 24px)',
           maxWidth: '900px',
         }}>
-          R6 Siege Cheats – ESP, Aimbot &amp; Wallhack
+          Rainbow Six Siege Cheats – ESP, Aimbot &amp; Wallhack
         </h1>
 
         <p style={{

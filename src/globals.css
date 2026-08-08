@@ -497,6 +497,14 @@ html.lenis.lenis-smooth {
   body {
     zoom: 0.72;
   }
+
+  #r6-cheats-overview,
+  #r6-cheats-guide,
+  .purchase-cta-section,
+  .static-seo-content {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 520px;
+  }
 }
 
 /* ── Mobile / small-tablet layout helpers ───────────────────────────── */

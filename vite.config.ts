@@ -4,8 +4,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    target: 'es2020',
     cssMinify: true,
     minify: 'esbuild',
+    modulePreload: { polyfill: false },
     rollupOptions: {
       output: {
         manualChunks(id) {
