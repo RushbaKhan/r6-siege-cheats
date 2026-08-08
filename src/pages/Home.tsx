@@ -3,6 +3,7 @@ import { HomeSeoIntro } from '../components/HomeSeoIntro';
 import { SafetySection } from '../components/SafetySection';
 import { Testimonials } from '../components/Testimonials';
 import { SeoContentSection } from '../components/SeoContentSection';
+import { PurchaseCta } from '../components/PurchaseCta';
 import { LazySection, lazySection } from '../components/DeferredSection';
 
 const FeaturesGrid = lazySection(() => import('../components/FeaturesGrid'), 'FeaturesGrid');
@@ -11,7 +12,6 @@ const Integrations = lazySection(() => import('../components/Integrations'), 'In
 const SupportBanner = lazySection(() => import('../components/SupportBanner'), 'SupportBanner');
 const PricingFaqSection = lazySection(() => import('../components/PricingFaqSection'), 'PricingFaqSection');
 const BlogPreview = lazySection(() => import('../components/BlogPreview'), 'BlogPreview');
-const DiscordSupport = lazySection(() => import('../components/DiscordSupport'), 'DiscordSupport');
 
 export function HomePage() {
   return (
@@ -27,7 +27,7 @@ export function HomePage() {
       <LazySection component={BlogPreview} fallbackMinHeight="360px" />
       <HomeSeoIntro />
       <SeoContentSection />
-      <LazySection component={DiscordSupport} fallbackMinHeight="240px" />
+      <PurchaseCta />
     </>
   );
 }
